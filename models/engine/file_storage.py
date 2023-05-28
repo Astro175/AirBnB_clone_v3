@@ -85,11 +85,11 @@ class FileStorage:
         """
         count = 0
         if cls is None:
-            classes = self.all()
-            for cls in classes.value():
+            objects = self.all()
+            for cls in objects.values():
                 count = count + 1
         else:
-            classes = self.all(cls)
-            for cls in classes.value():
+            objects = self.all(cls)
+            for cls in classes.values():
                 count = count + 1
         return count
