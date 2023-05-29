@@ -11,15 +11,18 @@ app = Flask(__name__)
 
 app.register_blueprint(app_views)
 
+
 @app.teardown_appcontext
 def close(Exception):
     """Closes session and loads object"""
     storage.close()
 
+
 @app_views.errorhandler(404)
 def invalid_route(e):
     """Returns 404 page"""
     return jsonify({"error": "Not found"})
+
 
 if __name__ == '__main__':
     host = os.getenv("HBNB_API_HOST", "0.0.0.0")
