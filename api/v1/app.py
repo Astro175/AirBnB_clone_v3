@@ -1,7 +1,5 @@
 #!/usr/bin/python3
-"""module that creates a flask skeleton
-   for blueprints
-"""
+"""module that creates for Blueprint"""
 import os
 from flask import Flask, jsonify
 from api.v1.views import app_views
