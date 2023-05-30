@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-"""Module for state views"""
+"""
+   Module for state views
+"""
 
 from flask import jsonify, Blueprint, request, abort
 from models import storage
@@ -41,7 +43,7 @@ def post_state():
     response = request.get_json()
     if not response:
         abort(400, 'Not a JSON')
-    if not in response 'name':
+    if 'name' not in response:
         abort(400, 'Missing name')
     new_state = State(**response)
     new_state.save()
